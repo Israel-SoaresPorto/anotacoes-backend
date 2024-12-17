@@ -13,4 +13,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Modelo para Categorias
+model Category {
+  id        Int      @id @default(autoincrement()) // ID auto-incrementado
+  name      String   @unique // Nome único da categoria
+  color     String   @default("#FFFFFF") // Cor em formato hexadecimal
+  createdAt DateTime @default(now()) // Data de criação
+  notes     Note[] // Relacionamento com as anotações
+}
 
+// Modelo para Anotações
+model Note {
+  id          Int       @id @default(autoincrement()) // ID auto-incrementado
+  title       String // Título da anotação
+  description String // Descrição da anotação
+  color       String    @default("#FFFFFF") // Cor customizada
+  createdAt   DateTime  @default(now()) // Data de criação
+  updatedAt   DateTime  @updatedAt // Data de edição automática
+  categoryId  Int? // Chave estrangeira opcional
+  category    Category? @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+}
