@@ -1,0 +1,15 @@
+{
+  "name": "anotacoes-api",
+  "version": "1.0.0",
+  "description": "backend de projeto para app de anotações",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "prisma": "^6.1.0"
+  }
+}
