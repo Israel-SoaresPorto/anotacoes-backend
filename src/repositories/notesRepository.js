@@ -49,3 +49,5 @@ class NotesRepository {
     return prisma.note.delete({ where: { id } });
   }
 }
+
+module.exports = NotesRepository();

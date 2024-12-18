@@ -21,3 +21,5 @@ class CategoryRepository {
     return prisma.category.delete({ where: { id } });
   }
 }
+
+module.exports = CategoryRepository();
